@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Support - Latent</title>
+  <meta name="description" content="Help with Latent, the film camera on your iPhone. Answers to common questions and how to reach the developer.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Condensed:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-cream: #F2E6D0;
+      --panel-cream: #FBF3E3;
+      --text-primary: #4A3826;
+      --text-muted: #8C7658;
+      --accent-mustard: #D9A441;
+      --accent-mustard-dark: #A5691E;
+      --accent-terracotta: #C1583F;
+      --border-warm: #B89A6B;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { background: var(--bg-cream); }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+      color: var(--text-primary);
+      line-height: 1.6;
+      padding: 40px 20px 80px;
+    }
+    .container { max-width: 640px; margin: 0 auto; }
+    .wordmark {
+      font-family: 'IBM Plex Sans Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 22px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      display: inline-block;
+      color: var(--text-primary);
+      text-decoration: none;
+      border-bottom: 3px solid var(--accent-mustard);
+      padding-bottom: 3px;
+      margin-bottom: 40px;
+    }
+    .eyebrow {
+      font-family: 'IBM Plex Mono', ui-monospace, monospace;
+      font-weight: 500;
+      font-size: 10px;
+      letter-spacing: 1.6px;
+      text-transform: uppercase;
+      color: var(--accent-mustard-dark);
+      margin-bottom: 10px;
+    }
+    h1 {
+      font-family: 'IBM Plex Sans Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 42px;
+      letter-spacing: 0.5px;
+      line-height: 1.1;
+      margin-bottom: 12px;
+    }
+    .lead {
+      font-size: 15px;
+      color: var(--text-muted);
+      margin-bottom: 40px;
+      font-style: italic;
+    }
+    h2 {
+      font-family: 'IBM Plex Sans Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 18px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      margin-top: 40px;
+      margin-bottom: 20px;
+    }
+    p { margin-bottom: 16px; font-size: 16px; }
+    strong { color: var(--text-primary); font-weight: 600; }
+    a {
+      color: var(--accent-terracotta);
+      text-decoration: none;
+      border-bottom: 1px solid currentColor;
+    }
+    a:hover { opacity: 0.72; }
+
+    .faq-item {
+      margin-bottom: 20px;
+      padding: 20px 22px;
+      background: var(--panel-cream);
+      border: 1px dashed var(--border-warm);
+      border-radius: 6px;
+    }
+    .faq-q {
+      font-family: 'IBM Plex Sans Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 17px;
+      letter-spacing: 0.3px;
+      margin-bottom: 10px;
+      color: var(--text-primary);
+    }
+    .faq-a { font-size: 15px; color: var(--text-primary); line-height: 1.55; }
+
+    .contact-block {
+      background: var(--panel-cream);
+      border: 2px solid var(--accent-mustard);
+      border-radius: 6px;
+      padding: 28px 24px;
+      margin-top: 44px;
+      text-align: center;
+    }
+    .contact-eyebrow {
+      font-family: 'IBM Plex Mono', ui-monospace, monospace;
+      font-weight: 500;
+      font-size: 10px;
+      letter-spacing: 1.6px;
+      text-transform: uppercase;
+      color: var(--accent-mustard-dark);
+      margin-bottom: 12px;
+    }
+    .contact-email {
+      font-family: 'IBM Plex Sans Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 22px;
+      letter-spacing: 0.4px;
+      margin-bottom: 10px;
+    }
+    .contact-email a {
+      color: var(--text-primary);
+      border-bottom: 2px solid var(--accent-mustard);
+    }
+    .contact-note {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    .footer {
+      margin-top: 60px;
+      padding-top: 24px;
+      border-top: 1px dashed var(--border-warm);
+      font-family: 'IBM Plex Mono', ui-monospace, monospace;
+      font-size: 11px;
+      color: var(--text-muted);
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+    .footer a { color: var(--text-muted); border-bottom-color: var(--text-muted); margin-right: 8px; }
+    @media (max-width: 480px) {
+      h1 { font-size: 34px; }
+      .contact-email { font-size: 18px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <a href="./" class="wordmark">Latent</a>
+
+    <div class="eyebrow">Help · Support</div>
+    <h1>Latent Support</h1>
+    <div class="lead">Built by one indie developer. Every message gets a real reply.</div>
+
+    <h2>Common questions</h2>
+
+    <div class="faq-item">
+      <div class="faq-q">How do I remove the watermark from my exports?</div>
+      <div class="faq-a">Upgrade to Latent Pro. It's a one-time in-app purchase, no subscription. Tap the Adjust knob on the camera screen and Latent will walk you to the upgrade sheet.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">How do I import my own LUT?</div>
+      <div class="faq-a">Scroll the film-box shelf on the camera screen all the way to the right. The "+" tile opens the Import LUT sheet - point it at any .cube file from your Files app and it'll sit on the shelf alongside the built-in stocks. Requires Latent Pro.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">Where are my recorded videos saved?</div>
+      <div class="faq-a">In your Photos app, under an album called "Latent" that Latent creates the first time you save a video or photo.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">Can I use my Latent footage anywhere?</div>
+      <div class="faq-a">Yes. Everything you record with Latent belongs to you. Use it commercially, share it, sell it - Latent claims no rights over your content.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">What iPhones does Latent support?</div>
+      <div class="faq-a">iPhone 8 or newer, running iOS 15 or later. Latent is not currently available on iPad.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">I bought Pro. How do I restore it on a new device?</div>
+      <div class="faq-a">Open the upgrade screen and tap "Restore Purchase" at the bottom. Your one-time purchase is tied to your Apple ID and transfers automatically.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">The app crashed / a feature isn't working - what should I do?</div>
+      <div class="faq-a">Email me at the address below. Include your iPhone model and iOS version, and a rough description of what you were doing when the problem happened. That's usually enough to reproduce and fix it.</div>
+    </div>
+
+    <div class="contact-block">
+      <div class="contact-eyebrow">Contact</div>
+      <div class="contact-email"><a href="mailto:support@banutza.cv">support@banutza.cv</a></div>
+      <div class="contact-note">Usually replies within a day or two.</div>
+    </div>
+
+    <div class="footer">
+      <a href="./">Latent</a><a href="./privacy.html">Privacy</a>
+    </div>
+  </div>
+</body>
+</html>
