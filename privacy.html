@@ -141,7 +141,8 @@
     </p>
     <p>What the server keeps:</p>
     <ul>
-      <li>A count of looks used per random ID (free looks), per Pro purchase (looks per day), and per network IP address (free looks per day, to limit abuse). These are counts, not a history of what you asked for.</li>
+      <li>A count of looks used per random ID (free looks), per Pro purchase (looks per month), and per network IP address (free looks per day, to limit abuse). These are counts, not a history of what you asked for.</li>
+      <li>The settings it returned for a request, for 30 days, so an identical request (like tapping the same example) can be answered without asking the AI model again. They are filed under a one-way fingerprint of the request, not under your description or any ID.</li>
       <li>Whether a Pro purchase was refunded, from Apple's refund notifications.</li>
       <li>Cloudflare's standard request logs, kept for a few days for troubleshooting. They do not include your description.</li>
     </ul>
