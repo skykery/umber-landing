@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Privacy - Umber</title>
-  <meta name="description" content="Umber processes your video on-device. Nothing is collected, transmitted, or shared.">
+  <meta name="description" content="Umber processes your video and photos on-device. Only the text you type into Describe a Look leaves your phone.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Condensed:wght@500;700&display=swap" rel="stylesheet">
@@ -106,10 +106,10 @@
 
     <div class="eyebrow">Legal · Privacy</div>
     <h1>Privacy Policy</h1>
-    <div class="updated">Last updated: 22 September 2026</div>
+    <div class="updated">Last updated: 26 October 2026</div>
 
     <p>
-      Umber is designed so your video and photos stay on your phone. This policy is short because Umber collects nothing, transmits nothing, and shares nothing with anyone.
+      Umber is designed so your video and photos stay on your phone. They are processed on your device and never uploaded. The one feature that uses the internet is Describe a Look, and the only thing it sends is the text you type, as explained below.
     </p>
 
     <h2>What Umber does not do</h2>
@@ -118,20 +118,54 @@
       <li>Umber does <strong>not</strong> track you across apps or websites.</li>
       <li>Umber does <strong>not</strong> use third-party tracking libraries.</li>
       <li>Umber does <strong>not</strong> require an account.</li>
-      <li>Umber does <strong>not</strong> sync your videos or photos to any cloud.</li>
+      <li>Umber does <strong>not</strong> upload or sync your videos or photos to any server or cloud.</li>
+      <li>Umber does <strong>not</strong> sell or share data with advertisers or data brokers.</li>
     </ul>
 
+    <h2>Describe a Look (AI looks)</h2>
+    <p>
+      Describe a Look turns a few words, like "rainy Tokyo 1994", into film settings for your viewfinder. To do that, Umber sends a request to its look server, and the server asks an AI model to choose the settings. If you never use Describe a Look, none of this happens.
+    </p>
+    <p>What a request contains:</p>
+    <ul>
+      <li>The description you type, or the example you tap.</li>
+      <li>When you refine a look, its current settings (numbers like grain or warmth).</li>
+      <li>A random ID that Umber creates on your phone. It is not your Apple ID, your name, or an advertising identifier, and Umber uses it only to count free looks.</li>
+      <li>If you have Umber Pro, Apple's signed record of the purchase, so the server can confirm it.</li>
+    </ul>
+    <p>
+      <strong>No images or video are ever sent.</strong> The AI model sees only your words and the settings.
+    </p>
+    <p>
+      The look server runs on Cloudflare. It passes your description and the settings to an AI model through OpenRouter, routed only to model providers that do not store requests or train on them. Umber does not store your descriptions.
+    </p>
+    <p>What the server keeps:</p>
+    <ul>
+      <li>A count of looks used per random ID (free looks), per Pro purchase (looks per day), and per network IP address (free looks per day, to limit abuse). These are counts, not a history of what you asked for.</li>
+      <li>Whether a Pro purchase was refunded, from Apple's refund notifications.</li>
+      <li>Cloudflare's standard request logs, kept for a few days for troubleshooting. They do not include your description.</li>
+    </ul>
+    <p>
+      None of this is linked to your name, email, or Apple ID, and none of it is used for tracking or advertising.
+    </p>
+
     <h2>Permissions Umber asks for</h2>
-    <p>Umber requests three system permissions so it can work as a camera. What each is used for:</p>
+    <p>Umber requests these system permissions so it can work as a camera. What each is used for:</p>
     <ul>
       <li><strong>Camera</strong>. To render the live viewfinder and record video. All processing happens on your device's GPU.</li>
       <li><strong>Microphone</strong>. To record audio alongside your video. Saved on-device only.</li>
       <li><strong>Photo Library</strong>. To save the videos and photos you capture into an "Umber" album in your Photos app. Umber does not read any other photos or videos in your library.</li>
+      <li><strong>Location</strong> (optional, photo mode only). To record where a photo was taken in the photo's own metadata, like the built-in Camera app. Your location is never sent to Umber or anyone else; it only leaves your phone inside photos you choose to share. Videos never include location.</li>
     </ul>
+
+    <h2>Photo and video metadata</h2>
+    <p>
+      Photos you take with Umber include standard camera details (date, camera, lens, exposure) and, if you allowed Location, where they were taken. Videos include the date and the device that recorded them, never location. This metadata is written into the files on your device, the same way the built-in Camera app does it.
+    </p>
 
     <h2>Purchases</h2>
     <p>
-      Umber Pro is a one-time in-app purchase processed by Apple's App Store using StoreKit. Umber has no access to your payment details. Apple's own privacy policy applies to that transaction.
+      Umber Pro is a one-time in-app purchase processed by Apple's App Store using StoreKit. Umber has no access to your payment details. Apple's own privacy policy applies to that transaction. If you use Describe a Look as a Pro user, the app sends Apple's signed purchase record to Umber's look server, which checks it against Apple's certificates. It contains a purchase ID and date, not your name or payment details.
     </p>
 
     <h2>What you export is yours</h2>
@@ -141,12 +175,12 @@
 
     <h2>Children</h2>
     <p>
-      Umber is rated 4+ on the App Store. Because Umber does not collect any personal information from anyone, no additional protections for children are required.
+      Umber is rated 4+ on the App Store. Umber does not ask for or collect personal information such as a name, email address, or account. Describe a Look sends only the text typed into it, as described above.
     </p>
 
     <h2>Changes to this policy</h2>
     <p>
-      If this policy ever changes, the "Last updated" date at the top will reflect the change. Because Umber does not collect data, meaningful changes are unlikely.
+      If this policy ever changes, the "Last updated" date at the top will reflect the change.
     </p>
 
     <h2>Contact</h2>
