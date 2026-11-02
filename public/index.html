@@ -102,6 +102,7 @@
     body { background: var(--dark); color: var(--on-dark); font: 17px/1.6 var(--body); overflow-x: clip; }
     img, canvas { display: block; max-width: 100%; height: auto; }
     a { color: inherit; }
+    a, button, summary, .cmp { touch-action: manipulation; -webkit-tap-highlight-color: transparent; }
     :focus-visible { outline: 2px solid var(--mustard); outline-offset: 3px; border-radius: 4px; }
     .paper :focus-visible { outline-color: var(--mustard-ink); }
 
@@ -218,11 +219,13 @@
     .chips button {
       font: 500 12px/1 var(--mono); letter-spacing: 1.2px; text-transform: uppercase;
       min-height: 40px; padding: 0 14px; border-radius: 999px; cursor: pointer;
-      color: inherit; background: transparent; border: 1px solid currentColor; opacity: .62;
-      transition: opacity .2s, background-color .2s, color .2s;
+      color: var(--on-dark-muted); background: transparent; border: 1px solid currentColor;
+      transition: background-color .2s, color .2s, border-color .2s;
     }
-    .chips button:hover { opacity: 1; }
-    .chips button[aria-pressed="true"] { opacity: 1; background: var(--mustard); border-color: var(--mustard); color: #1d140a; }
+    .chips button:hover { color: var(--on-dark); }
+    #develop.is-print .chips button { color: var(--ink-muted); }
+    #develop.is-print .chips button:hover { color: var(--ink); }
+    .chips button[aria-pressed="true"], #develop.is-print .chips button[aria-pressed="true"] { background: var(--mustard); border-color: var(--mustard); color: #1d140a; }
 
     .meters { margin-top: 26px; display: grid; gap: 10px; max-width: 340px; font: 500 12px/1 var(--mono); letter-spacing: 1.2px; text-transform: uppercase; }
     .meter { display: grid; grid-template-columns: 64px 1fr; align-items: center; gap: 12px; }
@@ -336,7 +339,7 @@
     .shot .phone { max-width: 300px; margin: 0 auto 28px; }
     .shot h3 { font-size: 26px; margin: 10px 0 8px; }
     .shot p { color: var(--ink-muted); }
-    .pro-badge { display: inline-block; font: 500 11px/1 var(--mono); letter-spacing: 1px; background: #C1583F; color: #fff; padding: 4px 6px; border-radius: 3px; vertical-align: 3px; margin-left: 6px; }
+    .pro-badge { display: inline-block; font: 500 12px/1 var(--mono); letter-spacing: 1px; background: #C1583F; color: #fff; padding: 4px 6px; border-radius: 3px; vertical-align: 3px; margin-left: 6px; }
 
     .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); border-top: 1px solid var(--rule-paper); }
     .feature { padding: 32px 28px 36px 0; border-bottom: 1px solid var(--rule-paper); }
@@ -433,7 +436,7 @@
   <a class="skip" href="#main">Skip to content</a>
 
   <header class="site-header">
-    <a href="/" class="brand" aria-label="Umber home"><img src="/icon-512.png" alt="" width="32" height="32"><span class="wordmark">Umber</span></a>
+    <a href="/" class="brand" aria-label="Umber home"><img src="/icon-512.png" alt="" width="32" height="32"><span class="wordmark" translate="no">Umber</span></a>
     <nav class="site-nav" aria-label="Primary">
       <a href="#shelf">Looks</a>
       <a href="#pricing">Pricing</a>
@@ -460,7 +463,7 @@
       </div>
 
       <div class="hero-phones">
-        <div class="phone back" aria-hidden="true"><img src="/media/app-bw.jpg" alt="" width="645" height="1398" loading="lazy" decoding="async"></div>
+        <div class="phone back" aria-hidden="true"><img src="/media/app-bw.jpg" alt="" width="645" height="1398" decoding="async"></div>
         <div class="phone front">
           <img src="/media/app-color.jpg" width="645" height="1398" fetchpriority="high" decoding="async"
                alt="Umber's camera screen: a warm color film look in the viewfinder, the film-box shelf below it, and the shutter in video mode">
@@ -473,7 +476,7 @@
       <h2 id="develop-title" class="sr-only">How Umber develops a frame</h2>
       <div class="dev-stage">
         <div>
-          <div class="steps">
+          <div class="steps" aria-live="polite">
             <div class="step" data-step data-active>
               <p class="eyebrow">01 · Raw</p>
               <h2>This is what your iPhone sees.</h2>
@@ -492,7 +495,7 @@
             <div class="step" data-step>
               <p class="eyebrow">04 · Glow</p>
               <h2>Bright edges bleed warm.</h2>
-              <p>Halation: the reddish glow around highlights that reads instantly as "shot on film".</p>
+              <p>Halation: the reddish glow around highlights that reads instantly as “shot on film.”</p>
             </div>
             <div class="step" data-step>
               <p class="eyebrow">05 · Print</p>
@@ -571,7 +574,7 @@
           <div>
             <p class="eyebrow">Describe a Look</p>
             <h3>Describe any look</h3>
-            <p>Type a place, a year or a mood, like "rainy Tokyo 1994", and watch it land on the viewfinder. Refine it in plain words: "warmer", "less grain".</p>
+            <p>Type a place, a year or a mood, like “rainy Tokyo 1994,” and watch it land on the viewfinder. Refine it in plain words: “warmer,” “less grain.”</p>
           </div>
         </div>
         <div class="shot reveal">
@@ -641,7 +644,7 @@
             <li>Every built-in film look</li>
             <li>Photo and video up to 4K, both cameras</li>
             <li>Try Describe a Look for free</li>
-            <li>Exports carry a small "UMBER" mark</li>
+            <li>Exports carry a small “UMBER” mark</li>
           </ul>
         </div>
         <div class="plan pro reveal">

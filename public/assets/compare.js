@@ -15,17 +15,32 @@ for (const el of document.querySelectorAll('[data-compare]')) {
     set(((e.clientX - r.left) / r.width) * 100);
   };
 
-  el.addEventListener('pointerdown', (e) => {
-    if (e.button !== 0) return;
+  // Mouse and pen drag at once. Touch waits for a clearly horizontal move, so a
+  // vertical page scroll that starts on the photo never moves the divider.
+  let start = null;
+  const begin = (e) => {
     cancelAnimationFrame(raf); hinted = true;
     dragging = true;
     try { el.setPointerCapture(e.pointerId); } catch {}
     fromEvent(e);
+  };
+  el.addEventListener('pointerdown', (e) => {
+    if (e.button !== 0) return;
+    if (e.pointerType === 'touch') { start = { x: e.clientX, y: e.clientY }; return; }
+    begin(e);
   });
-  el.addEventListener('pointermove', (e) => { if (dragging) fromEvent(e); });
-  const end = () => { dragging = false; };
-  el.addEventListener('pointerup', end);
-  el.addEventListener('pointercancel', end);
+  el.addEventListener('pointermove', (e) => {
+    if (dragging) { fromEvent(e); return; }
+    if (!start) return;
+    const dx = Math.abs(e.clientX - start.x), dy = Math.abs(e.clientY - start.y);
+    if (dx > 8 && dx > dy * 1.2) { start = null; begin(e); }
+    else if (dy > 10) start = null; // it's a scroll
+  });
+  el.addEventListener('pointerup', (e) => {
+    if (start) begin(e); // a tap jumps the divider there
+    start = null; dragging = false;
+  });
+  el.addEventListener('pointercancel', () => { start = null; dragging = false; });
   range.addEventListener('input', () => { cancelAnimationFrame(raf); hinted = true; set(+range.value); });
 
   set(50);
