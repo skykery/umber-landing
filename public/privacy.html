@@ -5,6 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Privacy - Umber</title>
   <meta name="description" content="Umber processes your video and photos on-device. Only the text you type into Describe a Look leaves your phone.">
+  <link rel="canonical" href="https://umber.cam/privacy">
+  <meta name="theme-color" content="#F2E6D0">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" href="/favicon-96.png" type="image/png" sizes="96x96">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Condensed:wght@500;700&display=swap" rel="stylesheet">
@@ -13,10 +18,10 @@
       --bg-cream: #F2E6D0;
       --panel-cream: #FBF3E3;
       --text-primary: #4A3826;
-      --text-muted: #8C7658;
+      --text-muted: #7A6247;
       --accent-mustard: #D9A441;
-      --accent-mustard-dark: #A5691E;
-      --accent-terracotta: #C1583F;
+      --accent-mustard-dark: #8A5414;
+      --accent-terracotta: #A8462F;
       --border-warm: #B89A6B;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -28,6 +33,8 @@
       padding: 40px 20px 80px;
     }
     .container { max-width: 640px; margin: 0 auto; }
+    a.brand { display: flex; width: fit-content; align-items: center; gap: 12px; text-decoration: none; border-bottom: 0; margin-bottom: 40px; }
+    .brand img { width: 36px; height: 36px; border-radius: 9px; }
     .wordmark {
       font-family: 'IBM Plex Sans Condensed', sans-serif;
       font-weight: 700;
@@ -39,12 +46,11 @@
       text-decoration: none;
       border-bottom: 3px solid var(--accent-mustard);
       padding-bottom: 3px;
-      margin-bottom: 40px;
     }
     .eyebrow {
       font-family: 'IBM Plex Mono', ui-monospace, monospace;
       font-weight: 500;
-      font-size: 10px;
+      font-size: 12px;
       letter-spacing: 1.6px;
       text-transform: uppercase;
       color: var(--accent-mustard-dark);
@@ -60,7 +66,7 @@
     }
     .updated {
       font-family: 'IBM Plex Mono', ui-monospace, monospace;
-      font-size: 11px;
+      font-size: 12px;
       letter-spacing: 0.5px;
       color: var(--text-muted);
       margin-bottom: 40px;
@@ -89,7 +95,7 @@
       padding-top: 24px;
       border-top: 1px dashed var(--border-warm);
       font-family: 'IBM Plex Mono', ui-monospace, monospace;
-      font-size: 11px;
+      font-size: 12px;
       color: var(--text-muted);
       letter-spacing: 0.5px;
       text-transform: uppercase;
@@ -98,11 +104,18 @@
     @media (max-width: 480px) {
       h1 { font-size: 34px; }
     }
+    .brand { view-transition-name: wordmark; }
+    @view-transition { navigation: auto; }
+    ::view-transition-old(root) { animation: vt-out .28s ease both; }
+    ::view-transition-new(root) { animation: vt-in .38s ease both; }
+    @keyframes vt-out { to { opacity: 0; filter: blur(4px); } }
+    @keyframes vt-in { from { opacity: 0; filter: blur(4px); } }
+    @media (prefers-reduced-motion: reduce) { ::view-transition-group(*), ::view-transition-old(*), ::view-transition-new(*) { animation-duration: .01s !important; } }
   </style>
 </head>
 <body>
   <div class="container">
-    <a href="./" class="wordmark">Umber</a>
+    <a href="/" class="brand"><img src="/icon-512.png" alt="" width="36" height="36"><span class="wordmark">Umber</span></a>
 
     <div class="eyebrow">Legal · Privacy</div>
     <h1>Privacy Policy</h1>
@@ -186,11 +199,11 @@
 
     <h2>Contact</h2>
     <p>
-      Questions? Email <a href="mailto:support@banutza.cv">support@banutza.cv</a>.
+      Questions? Email <a href="mailto:contact@umber.cam">contact@umber.cam</a>.
     </p>
 
     <div class="footer">
-      <a href="./">Umber</a><a href="./support.html">Support</a>
+      <a href="/">Umber</a><a href="/support">Support</a>
     </div>
   </div>
 </body>

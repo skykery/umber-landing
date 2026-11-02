@@ -1,0 +1,14 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "umber-landing",
+  "compatibility_date": "2026-10-01",
+  // Static-assets-only Worker: no script needed.
+  "assets": {
+    "directory": "./public",
+    "html_handling": "drop-trailing-slash",
+    "not_found_handling": "404-page"
+  },
+  "routes": [
+    { "pattern": "umber.cam", "custom_domain": true }
+  ]
+}
